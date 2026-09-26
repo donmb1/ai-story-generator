@@ -1,0 +1,6 @@
+#!/bin/sh
+# Attrappe der Claude CLI für Tests. Prüft die wichtigsten Flags.
+case " $* " in *" --tools  "*|*" --tools "*) ;; *) echo '{"is_error":true,"result":"no --tools"}'; exit 1 ;; esac
+[ -n "$ANTHROPIC_API_KEY" ] && { echo '{"is_error":true,"result":"api key leaked"}'; exit 1; }
+[ "$FAKE_CLAUDE_MODE" = auth ] && { echo '{"is_error":true,"result":"OAuth token has expired. Please run /login"}'; exit 1; }
+printf '%s' '{"type":"result","is_error":false,"duration_ms":1234,"result":"TITEL: Der kleine Drache\n\nEs war einmal ein kleiner Drache, der keine Angst vor dem Dunkeln hatte, aber vor Mäusen.\n\nEines Tages kam eine Maus und fragte ihn nach dem Weg nach Hause."}'

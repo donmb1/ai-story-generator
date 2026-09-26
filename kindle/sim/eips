@@ -1,0 +1,5 @@
+#!/bin/sh
+# Attrappe: protokolliert Aufrufe, legt angezeigte Bilder ab
+echo "eips $*" >> "$AISTORY_TMP/eips.log"
+for a in "$@"; do last=$a; done
+case " $* " in *" -g "*) n=$(ls "$AISTORY_TMP/shown" 2>/dev/null | wc -l); cp "$last" "$AISTORY_TMP/shown/$(printf %03d $n).png" ;; esac

@@ -1,0 +1,25 @@
+# AI Story Reader – Backend-Container (z. B. auf einem Raspberry Pi im Heimnetz).
+services:
+  story:
+    build: ../../backend
+    image: ai-story:latest
+    container_name: ai-story
+    restart: unless-stopped
+    env_file: .env
+    # Nur im Heimnetz (LAN-IP des Servers), bewusst nicht 0.0.0.0.
+    # Achtung: Docker-Portregeln umgehen ufw – die Bindung an die IP ist hier die Absicherung.
+    ports:
+      - "${LAN_IP:?LAN_IP in .env setzen}:8787:8787"
+    volumes:
+      - ./data:/data
+      - claude-home:/home/story/.claude
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 768m
+    pids_limit: 256
+    logging:
+      driver: json-file
+      options: { max-size: "5m", max-file: "3" }
+
+volumes:
+  claude-home:

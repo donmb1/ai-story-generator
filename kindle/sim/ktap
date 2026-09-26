@@ -1,0 +1,8 @@
+#!/bin/sh
+# Attrappe für "ktap serve": liefert Taps aus $TAPS, danach timeout
+[ "$*" = "${*%serve}" ] && exit 0
+exec 5<"$TAPS"
+while read -r cmd arg; do
+  [ "$cmd" = q ] && exit 0
+  if read -r x y <&5; then sleep 0.2; echo "$x $y"; else echo timeout; fi
+done

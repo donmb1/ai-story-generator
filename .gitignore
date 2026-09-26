@@ -1,0 +1,5 @@
+kindle/sim/out/
+backend/preview/
+deploy/pi/deploy.conf
+deploy/pi/.env
+.DS_Store

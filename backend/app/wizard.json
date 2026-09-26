@@ -1,0 +1,127 @@
+{
+  "_comment": "Story-Konfigurator. Schritte werden in dieser Reihenfolge abgefragt. 'when' blendet einen Schritt nur bei passender Vorauswahl ein. 'prompt' ist der Textbaustein für das Sprachmodell. Änderungen wirken nach Backend-Neustart, der Kindle muss nicht angefasst werden.",
+  "names": ["Emma", "Paul"],
+  "steps": [
+    {
+      "id": "genre",
+      "short": "Art",
+      "title": "Was für eine Geschichte?",
+      "options": [
+        {"id": "kinder",    "label": "Kindergeschichte", "prompt": "eine Kindergeschichte", "kids": true},
+        {"id": "gutenacht", "label": "Gute-Nacht",       "prompt": "eine ruhige Gute-Nacht-Geschichte zum Einschlafen", "kids": true},
+        {"id": "maerchen",  "label": "Märchen",         "prompt": "ein Märchen im klassischen Stil", "kids": true},
+        {"id": "abenteuer", "label": "Abenteuer",        "prompt": "eine Abenteuergeschichte"},
+        {"id": "krimi",     "label": "Krimi",            "prompt": "eine Kriminalgeschichte mit einem lösbaren Rätsel"},
+        {"id": "scifi",     "label": "Science-Fiction",  "prompt": "eine Science-Fiction-Geschichte"},
+        {"id": "fantasy",   "label": "Fantasy",          "prompt": "eine Fantasy-Geschichte"},
+        {"id": "grusel",    "label": "Gruselig (sanft)", "prompt": "eine leicht gruselige, aber nicht verstörende Geschichte"},
+        {"id": "humor",     "label": "Lustig",           "prompt": "eine humorvolle Geschichte"},
+        {"id": "fabel",     "label": "Fabel",            "prompt": "eine Fabel mit Tieren als Hauptfiguren", "kids": true}
+      ]
+    },
+    {
+      "id": "alter",
+      "short": "Alter",
+      "title": "Für welches Alter?",
+      "when": {"genre": ["kinder", "gutenacht", "maerchen", "fabel"]},
+      "options": [
+        {"id": "3-5",  "label": "3 - 5 Jahre",  "prompt": "für Kinder von 3 bis 5 Jahren: sehr einfache, kurze Sätze, viele Wiederholungen, klare Gefühle"},
+        {"id": "6-8",  "label": "6 - 8 Jahre",  "prompt": "für Kinder von 6 bis 8 Jahren: einfache Sätze, kurze Absätze, spannend aber nie beängstigend"},
+        {"id": "9-12", "label": "9 - 12 Jahre", "prompt": "für Kinder von 9 bis 12 Jahren: lebendige Sprache, ruhig etwas Spannung und Humor"}
+      ]
+    },
+    {
+      "id": "laenge",
+      "short": "Länge",
+      "title": "Wie lang?",
+      "options": [
+        {"id": "kurz",   "label": "Kurz (ca. 5 Min.)",   "prompt": "etwa 600 Wörter", "words": 600},
+        {"id": "mittel", "label": "Mittel (ca. 10 Min.)", "prompt": "etwa 1200 Wörter", "words": 1200},
+        {"id": "lang",   "label": "Lang (ca. 20 Min.)",   "prompt": "etwa 2200 Wörter", "words": 2200}
+      ]
+    },
+    {
+      "id": "thema",
+      "short": "Thema",
+      "title": "Worum soll es gehen?",
+      "options": [
+        {"id": "einhoerner",  "label": "Einhörner",    "prompt": "Einhörner"},
+        {"id": "dinos",       "label": "Dinosaurier",   "prompt": "Dinosaurier"},
+        {"id": "piraten",     "label": "Piraten",       "prompt": "Piraten und eine Schatzsuche"},
+        {"id": "weltraum",    "label": "Weltraum",      "prompt": "eine Reise ins Weltall"},
+        {"id": "drachen",     "label": "Drachen",       "prompt": "Drachen"},
+        {"id": "roboter",     "label": "Roboter",       "prompt": "einen freundlichen Roboter"},
+        {"id": "feuerwehr",   "label": "Feuerwehr",     "prompt": "die Feuerwehr"},
+        {"id": "unterwasser", "label": "Unterwasser",   "prompt": "eine Welt unter Wasser"},
+        {"id": "zauberschule","label": "Zauberschule",  "prompt": "eine Zauberschule"},
+        {"id": "bauernhof",   "label": "Bauernhof",     "prompt": "einen Bauernhof und seine Tiere"},
+        {"id": "ritter",      "label": "Ritter & Burgen","prompt": "Ritter und eine Burg"},
+        {"id": "dschungel",   "label": "Dschungel",     "prompt": "den Dschungel"},
+        {"id": "polar",       "label": "Nordpol",       "prompt": "den Nordpol, Eisbären und Pinguine"},
+        {"id": "zeitreise",   "label": "Zeitreise",     "prompt": "eine Zeitreise"},
+        {"id": "detektiv",    "label": "Detektive",     "prompt": "junge Detektive, die einen Fall lösen"},
+        {"id": "zirkus",      "label": "Zirkus",        "prompt": "einen Zirkus"},
+        {"id": "wald",        "label": "Zauberwald",    "prompt": "einen verzauberten Wald"},
+        {"id": "feen",        "label": "Feen & Elfen",  "prompt": "Feen und Elfen"},
+        {"id": "baustelle",   "label": "Baustelle",     "prompt": "eine Baustelle mit großen Maschinen"},
+        {"id": "eisenbahn",   "label": "Eisenbahn",     "prompt": "eine Eisenbahnreise"},
+        {"id": "fussball",    "label": "Fußball",      "prompt": "ein Fußballspiel"},
+        {"id": "pferde",      "label": "Pferde",        "prompt": "Pferde und einen Reiterhof"},
+        {"id": "katzen",      "label": "Katzen",        "prompt": "eine neugierige Katze"},
+        {"id": "hunde",       "label": "Hunde",         "prompt": "einen treuen Hund"},
+        {"id": "mond",        "label": "Mond",          "prompt": "den Mond"},
+        {"id": "wueste",      "label": "Wüste",        "prompt": "eine Wüste und eine Oase"},
+        {"id": "insel",       "label": "Schatzinsel",   "prompt": "eine einsame Insel"},
+        {"id": "monster",     "label": "Nette Monster", "prompt": "ein nettes Monster unter dem Bett"},
+        {"id": "stadt",       "label": "Große Stadt",  "prompt": "ein Abenteuer in einer großen Stadt"},
+        {"id": "wetter",      "label": "Wetter",        "prompt": "Wind, Regen und einen Regenbogen"},
+        {"id": "musik",       "label": "Musik",         "prompt": "Musik und ein Konzert"},
+        {"id": "kochen",      "label": "Kochen",        "prompt": "eine verrückte Kochshow"},
+        {"id": "raumschiff",  "label": "Raumschiff",    "prompt": "die Crew eines Raumschiffs"},
+        {"id": "ki",          "label": "Künstliche Intelligenz", "prompt": "eine künstliche Intelligenz"},
+        {"id": "berge",       "label": "Berge",         "prompt": "eine Bergwanderung"},
+        {"id": "museum",      "label": "Museum bei Nacht","prompt": "ein Museum, in dem nachts alles lebendig wird"}
+      ]
+    },
+    {
+      "id": "held",
+      "short": "Figur",
+      "title": "Wer ist die Hauptfigur?",
+      "names_as_options": true,
+      "options": [
+        {"id": "maedchen", "label": "Ein Mädchen", "prompt": "ein Mädchen"},
+        {"id": "junge",    "label": "Ein Junge",    "prompt": "ein Junge"},
+        {"id": "tier",     "label": "Ein Tier",     "prompt": "ein Tier"},
+        {"id": "roboter",  "label": "Ein Roboter",  "prompt": "ein kleiner Roboter"},
+        {"id": "geschw",   "label": "Geschwister",  "prompt": "zwei Geschwister"},
+        {"id": "frei",     "label": "Egal",         "prompt": "eine Figur deiner Wahl"}
+      ]
+    },
+    {
+      "id": "stimmung",
+      "short": "Stimmung",
+      "title": "Welche Stimmung?",
+      "options": [
+        {"id": "lustig",     "label": "Lustig",     "prompt": "lustig und verspielt"},
+        {"id": "spannend",   "label": "Spannend",   "prompt": "spannend"},
+        {"id": "ruhig",      "label": "Beruhigend", "prompt": "ruhig, warm und beruhigend"},
+        {"id": "lehrreich",  "label": "Lehrreich",  "prompt": "lehrreich, mit echten Fakten zum Thema"},
+        {"id": "magisch",    "label": "Magisch",    "prompt": "magisch und staunend"}
+      ]
+    },
+    {
+      "id": "botschaft",
+      "short": "Botschaft",
+      "title": "Mit Botschaft?",
+      "options": [
+        {"id": "keine",        "label": "Keine",        "prompt": ""},
+        {"id": "freundschaft", "label": "Freundschaft", "prompt": "Freundschaft"},
+        {"id": "mut",          "label": "Mut",          "prompt": "Mut"},
+        {"id": "teilen",       "label": "Teilen",       "prompt": "Teilen"},
+        {"id": "anderssein",   "label": "Anders sein ist gut", "prompt": "dass Anderssein etwas Gutes ist"},
+        {"id": "geduld",       "label": "Geduld",       "prompt": "Geduld"},
+        {"id": "natur",        "label": "Natur schützen", "prompt": "Respekt vor der Natur"}
+      ]
+    }
+  ]
+}
