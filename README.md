@@ -4,7 +4,18 @@ Turn an old, jailbroken Kindle into a minimalist bedtime-story machine: pick a s
 length, theme, hero and mood with a few taps, and Claude writes a brand-new story that you read
 right on the E-Ink display.
 
+<p align="center">
+  <img src="docs/images/photo-home.jpg" width="32%" alt="Home screen on a Kindle Paperwhite 3">
+  <img src="docs/images/photo-genre.jpg" width="32%" alt="Choosing the story type">
+  <img src="docs/images/photo-story.jpg" width="32%" alt="Reading a generated story">
+</p>
+
+<details>
+<summary>All screens (rendered)</summary>
+
 ![Screens: home, theme picker, summary, story page, menu](docs/images/overview.png)
+
+</details>
 
 - **Story configurator instead of typing.** You never type on E-Ink. The steps and more than 30 themes
   live in one JSON file, and you can add your kids' names as buttons.
